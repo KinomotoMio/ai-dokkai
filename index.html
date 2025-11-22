@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ai-dokkai 愛読解</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              stone: {
+                850: '#1c1917',
+                900: '#1c1917',
+                950: '#0c0a09',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Noto Sans SC', 'Noto Sans JP', sans-serif;
+      }
+      .font-jp {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      .font-cute {
+        font-family: 'Zen Maru Gothic', sans-serif;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; 
+      }
+      
+      /* Animations */
+      @keyframes slide-in-up {
+        from { opacity: 0; transform: translateY(30px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @keyframes float-out {
+        0% { opacity: 1; transform: translateY(0) scale(1); }
+        100% { opacity: 0; transform: translateY(-20px) scale(0.95); }
+      }
+      .animate-slide-in {
+        animation: slide-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .animate-float-out {
+        animation: float-out 0.5s ease-in forwards;
+      }
+      
+      /* Ciallo Easter Egg Animation */
+      @keyframes danmaku-fly {
+        0% { transform: translateX(100vw); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateX(-100%); opacity: 0; }
+      }
+      .animate-danmaku {
+        animation: danmaku-fly 6s linear infinite;
+        white-space: nowrap;
+        text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+      }
+      .rainbow-text {
+        background: linear-gradient(to right, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #a855f7, #ec4899);
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        animation: shine 3s linear infinite;
+      }
+      @keyframes shine {
+        to { background-position: 200% center; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-stone-50 text-stone-800 dark:bg-stone-950 dark:text-stone-100 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

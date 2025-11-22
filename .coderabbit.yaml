@@ -1,0 +1,78 @@
+# CodeRabbit Configuration
+# Learn more: https://docs.coderabbit.ai
+
+# Language setting
+language: en-US
+
+# Review settings
+reviews:
+  # Enable automatic review on PR creation/update
+  auto_review:
+    enabled: true
+    drafts: false  # Don't review draft PRs
+
+  # Review scope
+  path_filters:
+    - "!node_modules/**"
+    - "!dist/**"
+    - "!package-lock.json"
+
+  # Enable poem summary (adds a creative touch to PR summaries)
+  poem: true
+
+  # Review level: chill, normal, or assertive
+  profile: normal
+
+  # Request changes on critical issues
+  request_changes_workflow: false
+
+  # High-level summary
+  high_level_summary: true
+
+  # Collapse walkthrough details by default
+  collapse_walkthrough: false
+
+  # Enable review of commits
+  review_commits: false
+
+# Chat settings
+chat:
+  auto_reply: true
+
+# Knowledge base
+knowledge_base:
+  # Learnings from previous reviews
+  learnings:
+    scope: global
+
+  # Opt-in to share learnings for product improvement
+  opt_in: true
+
+# Tools and checks
+tools:
+  # Enable language-specific tools
+  eslint:
+    enabled: true
+
+  prettier:
+    enabled: true
+
+  # Security scanning
+  semgrep:
+    enabled: true
+
+# Ignore patterns
+ignore:
+  - "**/*.md"  # Don't review markdown files deeply
+  - "**/*.json" # Don't review JSON files
+  - "**/assets/**"  # Don't review assets
+
+# Custom instructions for the reviewer
+instructions: |
+  - Focus on React 19 best practices and hooks usage
+  - Check for potential security issues, especially API key handling
+  - Ensure TypeScript types are properly defined
+  - Review accessibility (a11y) considerations for UI components
+  - Check for Japanese language text encoding issues
+  - Verify that no sensitive data (API keys) is committed
+  - Suggest performance optimizations where applicable

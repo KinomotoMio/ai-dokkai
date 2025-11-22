@@ -1,0 +1,98 @@
+# Dosu Bot Configuration
+# Learn more: https://dosu.dev/docs
+
+# Auto-labeling settings
+auto_label:
+  enabled: true
+
+  # Labels for issues
+  issues:
+    - pattern: "bug|error|crash|broken|fix"
+      label: "bug"
+    - pattern: "feature|enhancement|improvement|add"
+      label: "enhancement"
+    - pattern: "docs|documentation|readme"
+      label: "documentation"
+    - pattern: "question|help|how to"
+      label: "question"
+    - pattern: "security|vulnerability|CVE"
+      label: "security"
+    - pattern: "performance|slow|optimization"
+      label: "performance"
+    - pattern: "ui|ux|design|style"
+      label: "ui/ux"
+    - pattern: "accessibility|a11y|wcag"
+      label: "accessibility"
+    - pattern: "api|gemini|openai|deepseek"
+      label: "api"
+    - pattern: "japanese|日本語|furigana|jlpt"
+      label: "i18n"
+
+  # Labels for pull requests
+  pull_requests:
+    - pattern: "WIP|work in progress|draft"
+      label: "work-in-progress"
+    - pattern: "breaking change"
+      label: "breaking-change"
+
+# Auto-response settings
+auto_response:
+  enabled: true
+
+  # Welcome message for first-time contributors
+  first_time_contributor: |
+    👋 Welcome to **ai-dokkai**! Thank you for your first contribution!
+
+    A maintainer will review your PR/issue soon. In the meantime, please make sure:
+    - [ ] You've read our [Contributing Guide](CONTRIBUTING.md)
+    - [ ] Your code follows the project's style guidelines
+    - [ ] You haven't committed any API keys or sensitive data
+
+    Thanks again for helping improve ai-dokkai! 🎉
+
+  # Common issue templates
+  templates:
+    missing_info: |
+      It looks like some information is missing from your issue. Could you please provide:
+      - Browser and OS version
+      - Steps to reproduce
+      - Expected vs actual behavior
+      - Console errors (if any)
+
+      This will help us investigate the issue faster. Thank you!
+
+    duplicate: |
+      This issue appears to be a duplicate of #{issue_number}.
+      Please refer to that issue for updates and discussion.
+
+# Assignment rules
+auto_assign:
+  enabled: false  # Disable for now (single maintainer project)
+
+# Stale issue management
+stale:
+  enabled: true
+  days_before_stale: 60
+  days_before_close: 14
+  stale_label: "stale"
+  exempt_labels:
+    - "pinned"
+    - "security"
+    - "good first issue"
+  stale_message: |
+    This issue has been automatically marked as stale because it has not had
+    recent activity. It will be closed in 14 days if no further activity occurs.
+
+    If this issue is still relevant, please leave a comment to keep it open.
+
+# Security
+security:
+  # Detect potential API key leaks
+  api_key_detection: true
+
+  # Alert patterns
+  alert_patterns:
+    - "GEMINI_API_KEY"
+    - "OPENAI_API_KEY"
+    - "API_KEY="
+    - "sk-"  # OpenAI key prefix

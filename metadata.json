@@ -1,0 +1,5 @@
+{
+  "name": "ai-dokkai",
+  "description": "A personalized Japanese learning assistant that generates JLPT-aligned reading materials. Supports Google Gemini, OpenAI, DeepSeek, and browser-native TTS.",
+  "requestFramePermissions": []
+}
