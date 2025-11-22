@@ -20,8 +20,8 @@ reviews:
   # Enable poem summary (adds a creative touch to PR summaries)
   poem: true
 
-  # Review level: chill, normal, or assertive
-  profile: normal
+  # Review level: chill or assertive
+  profile: chill
 
   # Request changes on critical issues
   request_changes_workflow: false
